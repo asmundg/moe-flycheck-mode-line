@@ -69,11 +69,11 @@
 
 (defun moe-flycheck-mode-line-reset ()
   "Reset the mode line theme."
-  (moe-theme-set-color moe-flycheck-mode-line-default))
+  (moe-theme-apply-color moe-flycheck-mode-line-default))
 
 (defun moe-flycheck-mode-line-check-failed ()
   "Change mode line theme when flycheck checks fails."
-  (moe-theme-set-color moe-flycheck-mode-line-check-failed))
+  (moe-theme-apply-color moe-flycheck-mode-line-check-failed))
 
 (defun moe-flycheck-mode-line-update ()
   "Update the mode line theme according to the Flycheck status."
@@ -84,7 +84,7 @@
 				     moe-flycheck-mode-line-warning)
 				    ((flycheck-has-current-errors-p 'info)
 				     moe-flycheck-mode-line-info)))
-    (moe-theme-set-color moe-theme-color)))
+    (moe-theme-apply-color moe-theme-color)))
 
 ;;;###autoload
 (define-minor-mode moe-flycheck-mode-line-mode
